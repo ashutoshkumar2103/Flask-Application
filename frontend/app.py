@@ -5,7 +5,7 @@ from datetime import datetime
 import requests
 
 # Backend URL for API calls
-BACKEND_URL = 'http://192.168.1.7:9000'
+BACKEND_URL = 'http://192.168.1.7:9000'  # I used this address as 0.0.0.0 was not working as so took help from google, same I have implemented in backend app.py
 
 # # Initializing the Flask application
 app = Flask(__name__)
