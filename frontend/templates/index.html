@@ -4,40 +4,98 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up Form</title>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: black;
+            font-family: Arial, sans-serif;
+             color: #00BFFF;  /* DeepSkyBlue text */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.4);
+        }
+
+        h2, p {
+            text-align: center;
+            text-color: aqua;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ff0000ff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #1E90FF;  /* DodgerBlue button */
+            color: white;
+        }
+
+        .view-data-btn {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: -10px 16px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .view-data-btn:hover {
+            background-color: #777;
+        }
+    </style>
 </head>
 <body>
-    <p>Hi, Welcome to Registration Page</p>
-    <p>Today is {{ day_of_the_week }} </p>
 
-    <div class="center">
-        <form action="/submit" method="post" style="text-align: center;">
+    <div class="container">
+        <h2>Hi, Welcome to Registration Page</h2>
+        <p>Today is {{ dayOfTheWeek }}</p>
+
+        <form action="/submit" method="post">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            <br>
+
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            <br>
-            <input type="submit" value="Submit" style="margin-left: 100px; margin-top: 5px">
+
+            <input type="submit" value="Submit">
         </form>
+
+        <a href="/data" class="view-data-btn"><button>View Data</button></a>
     </div>
+
 </body>
-
-<style>
-    body{
-        background-color: Black;
-    }
-    p{
-        text-align: center;
-        color: Yellow;
-    }
-
-    .center {
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-        border: 3px solid black;
-
-    }
-</style>
 </html>
