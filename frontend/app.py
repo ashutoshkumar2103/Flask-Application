@@ -5,7 +5,7 @@ from datetime import datetime
 import requests
 
 # Backend URL for API calls
-BACKEND_URL = 'http://192.168.1.7:9000'  # I used this address as 0.0.0.0 was not working as so took help from google, same I have implemented in backend app.py
+BACKEND_URL = 'http://127.0.0.1:9000'
 
 # # Initializing the Flask application
 app = Flask(__name__)
@@ -29,6 +29,15 @@ def submit():
     
     # Returning the response from the backend
     return 'Data submitted successfully!'
+
+@app.route('/data')
+def data():
+    # Fetching data from the backend
+    response = requests.get(BACKEND_URL + '/data')
+    
+    # Returning the data fetched from the backend
+    return response.json()
+
 
 # # This allows the app to be run with the command `python app.py` and it will start the Flask development server
 if __name__ == '__main__':
